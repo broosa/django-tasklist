@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<h2>This is a test of Django.</h2>
+
+Hello, {{ user_name }}!<br>
+
+Here are some tasks:
+<table class="report-table">
+{% for task in task_list %}
+    {% cycle 'report-row-dark' 'report-row-light' as row_class silent %}
+    <tr class="{{ row_class }}">
+        <td>{{ task.user.username }}</td>
+        <td>{{ task.time_due }}</td>
+        <td>{{ task.description }}</td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}
+

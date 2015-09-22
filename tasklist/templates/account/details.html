@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Account Details{% endblock %}
+
+{% block content %}
+    Currently logged in: {{ user.username }}<br>
+    First Name: {{ user.first_name }}<br>
+    Last Name: {{ user.last_name }}<br>
+    Last Login {{ user.last_login }}<br>
+{% endblock %}
