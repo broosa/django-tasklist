@@ -1,15 +1,28 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid"></div>
-        <ul class="nav navbar-nav">
-            <div class="navbar-brand">Django Task List</div>
-        </ul>
-        <ul></ul>
-            <div class="nav navbar-nav navbar-right">
-                {% if request.user.is_authenticated %}
-                    Logged in as <a href="{% url "acct_details" %}">{{ request.user.username }}</a>
-                {% else %}
-                {% endif %}
-            </div>
-        </ul>
+<nav class="navbar navbar-fixed-top navbar-default">
+    <div class="container-fluid">
+		<div class="navbar-header">
+			<ul class="nav navbar-nav">
+		    	<li><div class="navbar-brand">Django Task List</div></li>
+			</ul>
+		</div>
+	    <ul class="nav navbar-nav navbar-right" style="padding-right: 15px">
+	        {% if user.is_authenticated %}
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<span class="glyphicon glyphicon-user" style="margin-right: 10px"></span>{{request.user.first_name}} {{request.user.last_name}}<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="{% url "acct_details" %}">Account Details</a></li>
+						<li><a href="#">Account Settings</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="{% url "logout" %}">Log Out</a></li>
+				  	</ul>					
+				</li>
+	        {% else %}
+				<li>
+					<button class="btn btn-default navbar-btn pull-right" onclick="window.location.href='/account/login/'">Log In</a>
+				</li>            
+			{% endif %}
+	    </ul>
     </div>
 </nav>
