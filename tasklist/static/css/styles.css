@@ -1,15 +1,3 @@
-.report-row-dark {
-    background-color: #bbbbbb;
-}
-
-.report-row-light {
-    background-color: #dddddd;
-}
-
-.error_container {
-    color: #ff0000;
-}
-
 body {
     font-family: "Open Sans";
     padding-top: 70px;
@@ -22,4 +10,16 @@ body {
 
     margin-left: auto;
     margin-right: auto;
+}
+
+.report-row-dark {
+    background-color: #bbbbbb;
+}
+
+.report-row-light {
+    background-color: #dddddd;
+}
+
+.error-container {
+    color: #ff0000;
 }

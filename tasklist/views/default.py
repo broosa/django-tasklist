@@ -3,9 +3,10 @@ from django.template.response import SimpleTemplateResponse
 
 from django.contrib.auth.decorators import login_required
 
+from django.shortcuts import render
+
 from tasklist.models import base
 
-@login_required
 def site_index_view(request):
     index_template = loader.get_template('index.html')
     
@@ -15,4 +16,4 @@ def site_index_view(request):
         user_name = "Stranger!"
     context = Context({"user_name": user_name, "task_list": base.objects.all()})
     
-    return SimpleTemplateResponse(index_template, context)
+    return render(request, "index.html")
