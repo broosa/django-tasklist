@@ -17,7 +17,7 @@ Account Login
             <div class="error-container">{{ error_message }}</div>
         </div>
         {% endif %}
-        <form method="post" role="form" action="{% url 'login' %}">
+        <form method="post" role="form" action="{% url 'login' %}" class="clearfix">
             {% csrf_token %}
             <div class="form-group">
                 <label for="uname" class="sr-only">Username</label>
