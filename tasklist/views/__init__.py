@@ -1,4 +1,4 @@
 __author__ = 'eamon'
 
-import account
-import default
+from . import account
+from . import default
